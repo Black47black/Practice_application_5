@@ -23,9 +23,18 @@ const movieDB = {
         "Скотт Пилигрим против..."
     ]
 };
+// const adv = document.querySelector('.promo__adv'); // мой способ, который тоже работает
+// // adv.remove();
 
-const adv = document.querySelector('.promo__adv'); // удалили рекламные блоки
-adv.remove();
+const adv = document.querySelectorAll('.promo__adv img'); // удалили рекламные блоки
+// adv.forEach(item => {
+//     item.remove();
+// }); // 1 cпособ по курсу
+
+adv.forEach(function(item){
+    item.remove();
+}); // 2 cпособ по курсу
+
 
 const genre = document.querySelector('.promo__genre');
 genre.textContent = 'ДРАМА'; // поменяли жанр на ДРАМА
