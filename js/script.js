@@ -26,7 +26,11 @@ const movieDB = {
 // const adv = document.querySelector('.promo__adv'); // мой способ, который тоже работает
 // // adv.remove();
 
-const adv = document.querySelectorAll('.promo__adv img'); // удалили рекламные блоки
+
+const adv = document.querySelectorAll('.promo__adv img'),
+      poster = document.querySelector('.promo__bg'),
+      genre = poster.querySelector('.promo__genre');
+
 // adv.forEach(item => {
 //     item.remove();
 // }); // 1 cпособ по курсу
@@ -35,14 +39,9 @@ adv.forEach(function(item){
     item.remove();
 }); // 2 cпособ по курсу
 
-
-const genre = document.querySelector('.promo__genre');
 genre.textContent = 'ДРАМА'; // поменяли жанр на ДРАМА
 
-const marsImg = document.querySelector('.bg');
-console.log('marsImg: ', marsImg);
-
-// marsImg.innerHTML = '<img>img/bg.jpg';
+poster.style.backgroundImage = 'url("/030/img/bg.jpg")';// решение 3 задания 
 
 const listItem = document.querySelectorAll('.promo__interactive-item');
 console.log('listItem: ', listItem);
