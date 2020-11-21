@@ -29,7 +29,9 @@ const movieDB = {
 
 const adv = document.querySelectorAll('.promo__adv img'),
       poster = document.querySelector('.promo__bg'),
-      genre = poster.querySelector('.promo__genre');
+      genre = poster.querySelector('.promo__genre'),
+      movieList = document.querySelector('.promo__interactive-list');
+
 
 // adv.forEach(item => {
 //     item.remove();
@@ -43,11 +45,17 @@ genre.textContent = 'ДРАМА'; // поменяли жанр на ДРАМА
 
 poster.style.backgroundImage = 'url("/030/img/bg.jpg")';// решение 3 задания 
 
-const listItem = document.querySelectorAll('.promo__interactive-item');
-console.log('listItem: ', listItem);
+movieList.innerHTML = '';
 
-movieDB.movies.forEach((a,b) => (a  - b));
-console.log('movies: ', movieDB.movies);
+movieDB.movies.sort();
 
+// console.log(poster.innerHTML); // команда innerHTML позволяет полчать элементы со страницы
 
+movieDB.movies.forEach((film, i) => {
+    movieList.innerHTML += `
+        <li class="promo__interactive-item">${i + 1}. ${movieDB.movies[i]}
+            <div class="delete"></div>
+        </li>
+    `;
+});
 
